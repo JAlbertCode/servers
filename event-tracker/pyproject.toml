@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "event-tracker"
+version = "0.1.0"
+description = "MCP server for tracking event sponsors and contacts"
+requires-python = ">=3.9"
+dependencies = [
+    "mcp",
+    "httpx",
+    "beautifulsoup4"
+]
+
+[tool.hatch.build]
+include = [
+    "src/event_tracker/*.py",
+]
+
+[project.scripts]
+event-tracker = "event_tracker.server:main"
